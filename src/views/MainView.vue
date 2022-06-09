@@ -1,5 +1,5 @@
 <script setup>
-import FloatingList from '@/components/FloatingList.vue';
+import FloatingList from "@/components/FloatingList.vue";
 </script>
 
 <template>

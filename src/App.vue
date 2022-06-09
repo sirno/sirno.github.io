@@ -1,6 +1,6 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
-import TitleView from '@/components/TitleView.vue';
+import { RouterView } from "vue-router";
+import TitleView from "@/components/TitleView.vue";
 </script>
 
 <template>
@@ -20,7 +20,7 @@ import TitleView from '@/components/TitleView.vue';
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
 #app {
   max-width: 1280px;
@@ -50,11 +50,11 @@ a,
   transition: 0.4s;
 }
 
-/* @media (hover: hover) {
+@media (hover: hover) {
   a:hover {
     background-color: hsla(345, 100%, 71%, 0.2);
   }
-} */
+}
 
 nav {
   width: 100%;

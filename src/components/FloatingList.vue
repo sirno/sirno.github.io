@@ -1,5 +1,5 @@
 <script setup>
-import FloatingListItem from './FloatingListItem.vue';
+import FloatingListItem from "./FloatingListItem.vue";
 </script>
 
 <script>
@@ -8,19 +8,22 @@ export default {
     return {
       content: [
         {
-          cloud: 'dec 21',
-          title: 'rainr',
-          content: 'dense matrix rain for rainer',
+          cloud: "dec 21",
+          title: "rainr",
+          content: "dense matrix rain for rainer",
+          href: "https://github.com/sirno/rainr",
         },
         {
-          cloud: 'jul 21',
-          title: 'mensar',
-          content: 'delightful meals',
+          cloud: "jul 21",
+          title: "mensar",
+          content: "delightful meals",
+          href: "https://github.com/sirno/mensar",
         },
         {
-          cloud: 'jun 21',
-          title: 'radior',
-          content: 'soundscapes',
+          cloud: "jun 21",
+          title: "radior",
+          content: "streaming through space",
+          href: "https://github.com/sirno/radior",
         },
       ],
     };
@@ -30,8 +33,11 @@ export default {
 
 <template>
   <FloatingListItem v-for="item in content" :key="item.id">
-    <template #cloud> {{ item.cloud }} </template>
-    <template #title> {{ item.title }} </template>
+    <template #upper> {{ item.cloud }} </template>
+    <template #title>
+      <a target="_blank" :href="item.href">{{ item.title }}</a>
+    </template>
+    <template #lower> {{ item.content }} </template>
 
     {{ item.content }}
   </FloatingListItem>

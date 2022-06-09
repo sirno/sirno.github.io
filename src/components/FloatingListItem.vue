@@ -1,5 +1,5 @@
 <script setup>
-import FloatingElement from './FloatingElement.vue';
+import FloatingElement from "./FloatingElement.vue";
 </script>
 
 <script>
@@ -24,12 +24,12 @@ export default {
     this.handleScroll();
   },
   beforeMount() {
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.handleScroll);
   },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('resize', this.handleScroll);
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.handleScroll);
   },
 };
 </script>
@@ -37,13 +37,13 @@ export default {
 <template>
   <div class="item" ref="top">
     <FloatingElement :offset="offset">
-      <slot name="cloud"></slot>
+      <slot name="upper"></slot>
     </FloatingElement>
     <div ref="title">
       <slot name="title"></slot>
     </div>
     <FloatingElement :offset="offset">
-      <slot></slot>
+      <slot name="lower"></slot>
     </FloatingElement>
   </div>
 </template>
