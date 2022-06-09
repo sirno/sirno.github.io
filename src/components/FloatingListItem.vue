@@ -9,9 +9,6 @@ export default {
       offset: 0,
     };
   },
-  props: {
-    listNumber: Number,
-  },
   methods: {
     computeOffset() {
       let rect = this.$refs.title.getBoundingClientRect();
@@ -22,6 +19,9 @@ export default {
     handleScroll() {
       this.offset = this.computeOffset();
     },
+  },
+  mounted() {
+    this.handleScroll();
   },
   beforeMount() {
     window.addEventListener('scroll', this.handleScroll);
@@ -39,9 +39,9 @@ export default {
     <FloatingElement :offset="offset">
       <slot name="cloud"></slot>
     </FloatingElement>
-    <item ref="title">
+    <div ref="title">
       <slot name="title"></slot>
-    </item>
+    </div>
     <FloatingElement :offset="offset">
       <slot></slot>
     </FloatingElement>

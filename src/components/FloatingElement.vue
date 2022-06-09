@@ -20,11 +20,11 @@ export default {
 </script>
 
 <template>
-  <item
+  <div
     :style="{
       transform: 'translate(' + offsetWidth + 'px,' + offsetHeight + 'px)',
     }"
   >
     <slot></slot>
-  </item>
+  </div>
 </template>

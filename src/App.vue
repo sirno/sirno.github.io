@@ -1,26 +1,18 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-import HelloWorld from '@/components/HelloWorld.vue';
+import TitleView from '@/components/TitleView.vue';
 </script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <TitleView />
 
-      <nav>
+      <!-- <nav>
         <RouterLink to="/">Main</RouterLink>
         <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-      </nav>
+      </nav> -->
     </div>
   </header>
 
@@ -38,7 +30,7 @@ import HelloWorld from '@/components/HelloWorld.vue';
 
   font-weight: normal;
 
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 header {
@@ -52,17 +44,17 @@ header {
 }
 
 a,
-.green {
+.colored {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: hsla(345, 100%, 71%, 1);
   transition: 0.4s;
 }
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(345, 100%, 71%, 0.2);
   }
-}
+} */
 
 nav {
   width: 100%;

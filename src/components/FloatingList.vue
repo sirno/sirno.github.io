@@ -4,40 +4,36 @@ import FloatingListItem from './FloatingListItem.vue';
 
 <script>
 export default {
-  name: 'FloatingList',
-  beforeMount() {
-    window.addEventListener('scroll', this.handleScroll);
-    console.log('scrolling Injected');
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
-    console.log('scrolling Destroyed');
-  },
-  methods: {
-    handleScroll() {
-      console.log('scrolling...');
-    },
-  },
   data() {
     return {
-      offset: 50,
+      content: [
+        {
+          cloud: 'dec 21',
+          title: 'rainr',
+          content: 'dense matrix rain for rainer',
+        },
+        {
+          cloud: 'jul 21',
+          title: 'mensar',
+          content: 'delightful meals',
+        },
+        {
+          cloud: 'jun 21',
+          title: 'radior',
+          content: 'soundscapes',
+        },
+      ],
     };
   },
 };
 </script>
 
 <template>
-  <FloatingListItem :offset="offset">
-    <template #cloud> CLOUD </template>
-    <template #title> TITLE </template>
+  <FloatingListItem v-for="item in content" :key="item.id">
+    <template #cloud> {{ item.cloud }} </template>
+    <template #title> {{ item.title }} </template>
 
-    Some text
-  </FloatingListItem>
-  <FloatingListItem :offset="offset">
-    <template #cloud> CLOUD </template>
-    <template #title> TITLE </template>
-
-    Some text
+    {{ item.content }}
   </FloatingListItem>
 </template>
 
