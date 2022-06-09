@@ -28,18 +28,23 @@ img {
   margin-left: 50px;
 }
 
-.title-view {
-  margin-left: 50px;
+.title {
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title h1,
 .title h3 {
+  display: inline-block;
   text-align: center;
 }
 
 @media (min-width: 1024px) {
   .title h1,
   .title h3 {
+    display: inline-block;
     text-align: left;
   }
 }
