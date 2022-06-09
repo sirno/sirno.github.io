@@ -1,3 +1,8 @@
+//
+<script setup>
+import DisturbedString from "./DisturbedString.vue";
+</script>
+
 <template>
   <img
     alt="logo"
@@ -9,7 +14,7 @@
 
   <div class="title">
     <h1 class="colored">collection</h1>
-    <h3>of things</h3>
+    <h3>of <DisturbedString>things</DisturbedString></h3>
   </div>
 </template>
 

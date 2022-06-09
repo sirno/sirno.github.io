@@ -11,4 +11,9 @@ module.exports = {
   env: {
     "vue/setup-compiler-macros": true,
   },
+  parserOptions: {
+    parser: "@babel/eslint-parser",
+    ecmaVersion: 2020,
+    requireConfigFile: false,
+  },
 };
