@@ -21,6 +21,7 @@ export default {
 
 <template>
   <div
+    class="float-element"
     :style="{
       transform: 'translate(' + offsetWidth + 'px,' + offsetHeight + 'px)',
     }"
@@ -28,3 +29,9 @@ export default {
     <slot></slot>
   </div>
 </template>
+
+<style scoped>
+.float-element {
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+</style>
