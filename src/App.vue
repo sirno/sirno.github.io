@@ -1,6 +1,16 @@
 <script setup>
 import { RouterView } from "vue-router";
 import TitleView from "@/components/TitleView.vue";
+import { mapActions } from "pinia";
+import { useNutsStore } from "./stores/counter";
+</script>
+
+<script>
+export default {
+  methods: {
+    ...mapActions(useNutsStore, ["toggle_nuts"]),
+  },
+};
 </script>
 
 <template>
@@ -8,11 +18,12 @@ import TitleView from "@/components/TitleView.vue";
     <div class="wrapper">
       <TitleView />
 
-      <!-- <nav>
-        <RouterLink to="/">Main</RouterLink>
+      <nav>
+        <a @click="toggle_nuts">banane</a>
+        <!-- <RouterLink to="/">Main</RouterLink>
         <RouterLink to="/home">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
+        <RouterLink to="/about">About</RouterLink> -->
+      </nav>
     </div>
   </header>
 
@@ -53,6 +64,10 @@ a,
 @media (hover: hover) {
   a:hover {
     background-color: hsla(345, 100%, 71%, 0.2);
+  }
+
+  a:active {
+    background-color: hsla(345, 100%, 71%, 0.7);
   }
 }
 

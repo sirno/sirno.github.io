@@ -29,8 +29,11 @@ h3 {
   font-size: 1.2rem;
 }
 
-img {
-  margin-left: 50px;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 .title {
