@@ -45,6 +45,7 @@ export default {
 
 <style scoped>
 .item {
+  scroll-snap-align: start;
   height: 100vh;
 }
 </style>

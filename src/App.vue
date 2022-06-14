@@ -33,6 +33,13 @@ export default {
 <style>
 @import "@/assets/base.css";
 
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  scroll-snap-type: y mandatory;
+}
+
 #app {
   max-width: 1280px;
   min-width: 100%;
@@ -40,8 +47,6 @@ export default {
   padding: 2rem;
 
   font-weight: normal;
-
-  overflow: hidden;
 }
 
 header {

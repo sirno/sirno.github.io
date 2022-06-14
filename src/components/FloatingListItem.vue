@@ -1,5 +1,6 @@
 <script setup>
 import FloatingElement from "./FloatingElement.vue";
+import FloatingSplit from "./FloatingSplit.vue";
 </script>
 
 <script>
@@ -42,9 +43,9 @@ export default {
     <div ref="title">
       <slot name="title"></slot>
     </div>
-    <FloatingElement :offset="offset">
+    <FloatingSplit :offset="offset">
       <slot name="lower"></slot>
-    </FloatingElement>
+    </FloatingSplit>
   </div>
 </template>
 

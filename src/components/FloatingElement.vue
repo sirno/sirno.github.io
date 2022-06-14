@@ -32,6 +32,7 @@ export default {
 
 <style scoped>
 .float-element {
+  display: inline-block;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 }
 </style>
