@@ -1,6 +1,8 @@
 <script setup>
+import { mapState } from "pinia";
 import FloatingElement from "./FloatingElement.vue";
 import FloatingSplit from "./FloatingSplit.vue";
+import { useNutsStore } from "../stores/nuts";
 </script>
 
 <script>
@@ -9,6 +11,9 @@ export default {
     return {
       offset: 0,
     };
+  },
+  computed: {
+    ...mapState(useNutsStore, ["peanuts"]),
   },
   methods: {
     computeOffset() {
@@ -43,9 +48,12 @@ export default {
     <div ref="title">
       <slot name="title"></slot>
     </div>
-    <FloatingSplit :offset="offset">
+    <FloatingSplit :offset="offset" v-if="peanuts">
       <slot name="lower"></slot>
     </FloatingSplit>
+    <FloatingElement :offset="offset" v-if="!peanuts">
+      <slot name="lower"></slot>
+    </FloatingElement>
   </div>
 </template>
 

@@ -1,12 +1,15 @@
 <script setup>
 import { RouterView } from "vue-router";
 import TitleView from "@/components/TitleView.vue";
-import { mapActions } from "pinia";
-import { useNutsStore } from "./stores/counter";
+import { mapActions, mapState } from "pinia";
+import { useNutsStore } from "./stores/nuts";
 </script>
 
 <script>
 export default {
+  computed: {
+    ...mapState(useNutsStore, ["coconuts"]),
+  },
   methods: {
     ...mapActions(useNutsStore, ["toggle_nuts"]),
   },
@@ -129,13 +132,13 @@ nav a:first-of-type {
     margin: 0 2rem 0 0;
   }
 
-  nav {
+  /* nav {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
 
     padding: 1rem 0;
     margin-top: 1rem;
-  }
+  } */
 }
 </style>

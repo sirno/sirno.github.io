@@ -14,6 +14,12 @@ export default {
           href: "https://github.com/sirno/rainr",
         },
         {
+          cloud: "oct 21",
+          title: "pypetting",
+          content: "the bartending python package",
+          href: "https://github.com/sirno/pypetting",
+        },
+        {
           cloud: "jul 21",
           title: "mensar",
           content: "delightful meals",
