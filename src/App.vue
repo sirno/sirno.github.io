@@ -52,6 +52,10 @@ html {
   font-weight: normal;
 }
 
+.wrapper {
+  margin-left: 50px;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -80,7 +84,9 @@ a,
 }
 
 nav {
-  width: 100%;
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;

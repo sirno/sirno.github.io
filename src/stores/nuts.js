@@ -5,7 +5,7 @@ const keys = ["peanuts", "coconuts"];
 export const useNutsStore = defineStore({
   id: "nuts",
   state: () => ({
-    peanuts: false,
+    peanuts: true,
     coconuts: false,
   }),
   actions: {

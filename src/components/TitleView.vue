@@ -1,6 +1,15 @@
-//
 <script setup>
+import { mapState } from "pinia";
 import DisturbedString from "./DisturbedString.vue";
+import { useNutsStore } from "../stores/nuts";
+</script>
+
+<script>
+export default {
+  computed: {
+    ...mapState(useNutsStore, ["coconuts"]),
+  },
+};
 </script>
 
 <template>
@@ -14,7 +23,10 @@ import DisturbedString from "./DisturbedString.vue";
 
   <div class="title">
     <h1 class="colored">collection</h1>
-    <h3>of <DisturbedString>things</DisturbedString></h3>
+    <h3>
+      of <DisturbedString v-if="coconuts">things</DisturbedString
+      ><span v-if="!coconuts">things</span>
+    </h3>
   </div>
 </template>
 
@@ -29,11 +41,8 @@ h3 {
   font-size: 1.2rem;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+img {
+  margin-left: 50px;
 }
 
 .title {

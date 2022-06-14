@@ -9,6 +9,10 @@ export default {
     offset: Number,
   },
   computed: {
+    opacity() {
+      let size = 2 * Math.max(window.innerWidth, window.innerHeight);
+      return Math.max(0, 1 - this.offset / size);
+    },
     offsetWidth() {
       return this.offset * this.velocity[0];
     },
@@ -23,6 +27,7 @@ export default {
   <div
     class="float-element"
     :style="{
+      opacity: opacity,
       transform: 'translate(' + offsetWidth + 'px,' + offsetHeight + 'px)',
     }"
   >
