@@ -57,6 +57,7 @@ html {
 }
 
 header {
+  scroll-snap-align: start;
   line-height: 1.5;
   max-height: 100vh;
 }
