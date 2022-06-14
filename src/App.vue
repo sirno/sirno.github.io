@@ -37,10 +37,16 @@ export default {
 @import "@/assets/base.css";
 
 html {
+  width: 100%;
+
   overflow-x: hidden;
   overflow-y: scroll;
 
   scroll-snap-type: y mandatory;
+}
+
+body {
+  scroll-snap-align: start;
 }
 
 #app {
@@ -52,12 +58,7 @@ html {
   font-weight: normal;
 }
 
-.wrapper {
-  margin-left: 50px;
-}
-
 header {
-  scroll-snap-align: start;
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -117,6 +118,10 @@ a:first-of-type {
     place-items: center;
   }
 
+  .wrapper {
+    margin-left: 50px;
+  }
+
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -138,14 +143,5 @@ a:first-of-type {
   .logo {
     margin: 0 2rem 0 0;
   }
-
-  /* nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  } */
 }
 </style>
