@@ -29,6 +29,8 @@ export default {
     :style="{
       opacity: opacity,
       transform: 'translate(' + offsetWidth + 'px,' + offsetHeight + 'px)',
+      WebkitTransform:
+        'translate(' + offsetWidth + 'px,' + offsetHeight + 'px)',
     }"
   >
     <slot></slot>

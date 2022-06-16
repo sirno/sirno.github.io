@@ -36,31 +36,32 @@ export default {
 <style>
 @import "@/assets/base.css";
 
-html {
-  width: 100%;
-
-  overflow-x: hidden;
-  overflow-y: scroll;
-
-  scroll-snap-type: y mandatory;
-}
-
+html,
 body {
-  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
 }
 
 #app {
   max-width: 1280px;
   min-width: 100%;
+
+  height: 100vh;
+
   margin: 0 auto;
   padding: 2rem;
 
   font-weight: normal;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 header {
   line-height: 1.5;
   max-height: 100vh;
+  scroll-snap-align: start;
 }
 
 .logo {

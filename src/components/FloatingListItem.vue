@@ -30,12 +30,20 @@ export default {
     this.handleScroll();
   },
   beforeMount() {
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("resize", this.handleScroll);
+    document
+      .getElementById("app")
+      .addEventListener("scroll", this.handleScroll);
+    document
+      .getElementById("app")
+      .addEventListener("resize", this.handleScroll);
   },
   beforeUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.handleScroll);
+    document
+      .getElementById("app")
+      .removeEventListener("scroll", this.handleScroll);
+    document
+      .getElementById("app")
+      .removeEventListener("resize", this.handleScroll);
   },
 };
 </script>
