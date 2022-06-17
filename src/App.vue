@@ -8,7 +8,12 @@ import { useNutsStore } from "./stores/nuts";
 <script>
 export default {
   computed: {
-    ...mapState(useNutsStore, ["coconuts"]),
+    style() {
+      return {
+        scrollSnapType: this.walnuts ? "y mandatory" : "none",
+      };
+    },
+    ...mapState(useNutsStore, ["coconuts", "walnuts"]),
   },
   methods: {
     ...mapActions(useNutsStore, ["toggle_nuts"]),
@@ -17,36 +22,38 @@ export default {
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <TitleView />
+  <div id="app-container" :style="style">
+    <header>
+      <div class="wrapper">
+        <TitleView />
 
-      <nav>
-        <a @click="toggle_nuts">banane</a>
-        <!-- <RouterLink to="/">Main</RouterLink>
+        <nav>
+          <a @click="toggle_nuts">banane</a>
+          <!-- <RouterLink to="/">Main</RouterLink>
         <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink> -->
-      </nav>
-    </div>
-  </header>
+        </nav>
+      </div>
+    </header>
 
-  <RouterView />
+    <RouterView />
+  </div>
 </template>
 
 <style>
 @import "@/assets/base.css";
 
 html,
-body {
+body,
+#app {
+  width: 100vw;
   position: relative;
   overflow: hidden;
 }
 
-#app {
-  max-width: 1280px;
-  min-width: 100%;
-
+#app-container {
   height: 100vh;
+  width: 100vw;
 
   margin: 0 auto;
   padding: 2rem;
@@ -55,7 +62,6 @@ body {
 
   overflow-x: hidden;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
 }
 
 header {
@@ -123,7 +129,7 @@ a:first-of-type {
     margin-left: 50px;
   }
 
-  #app {
+  #app-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;

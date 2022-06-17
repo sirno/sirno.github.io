@@ -31,18 +31,18 @@ export default {
   },
   beforeMount() {
     document
-      .getElementById("app")
+      .getElementById("app-container")
       .addEventListener("scroll", this.handleScroll);
     document
-      .getElementById("app")
+      .getElementById("app-container")
       .addEventListener("resize", this.handleScroll);
   },
   beforeUnmount() {
     document
-      .getElementById("app")
+      .getElementById("app-container")
       .removeEventListener("scroll", this.handleScroll);
     document
-      .getElementById("app")
+      .getElementById("app-container")
       .removeEventListener("resize", this.handleScroll);
   },
 };

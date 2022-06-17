@@ -16,7 +16,7 @@ export default {
         {
           cloud: "oct 21",
           title: "pypetting",
-          content: "the bartending python package",
+          content: "bartending python package",
           href: "https://github.com/sirno/pypetting",
         },
         {
