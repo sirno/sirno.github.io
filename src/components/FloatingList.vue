@@ -8,6 +8,12 @@ export default {
     return {
       content: [
         {
+          cloud: "jun 22",
+          title: "virolution",
+          content: "super virus simulation",
+          href: "https://github.com/sirno/virolution",
+        },
+        {
           cloud: "dec 21",
           title: "rainr",
           content: "dense matrix rain for rainer",
