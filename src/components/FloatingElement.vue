@@ -11,7 +11,7 @@ export default {
   computed: {
     opacity() {
       let size = 2 * Math.max(window.innerWidth, window.innerHeight);
-      return Math.max(0, 1 - this.offset / size);
+      return Math.max(0, 1 - Math.abs(this.offset / size));
     },
     offsetWidth() {
       return this.offset * this.velocity[0];
