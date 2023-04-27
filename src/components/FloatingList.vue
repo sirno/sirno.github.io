@@ -8,6 +8,12 @@ export default {
     return {
       content: [
         {
+          cloud: "apr 23",
+          title: "slot_machine",
+          content: "gambling configuration sampler",
+          href: "https://github.com/sirno/slot_machine",
+        },
+        {
           cloud: "jun 22",
           title: "virolution",
           content: "super virus simulation",
