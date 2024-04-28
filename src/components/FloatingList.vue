@@ -8,6 +8,12 @@ export default {
     return {
       content: [
         {
+          cloud: "sep 23",
+          title: "stashr",
+          content: "command line fix",
+          href: "https://github.com/sirno/stashr",
+        },
+        {
           cloud: "apr 23",
           title: "slot_machine",
           content: "gambling configuration sampler",
