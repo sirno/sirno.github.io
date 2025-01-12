@@ -1,6 +1,8 @@
 <script setup>
 import { RouterView } from "vue-router";
 import TitleView from "@/components/TitleView.vue";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faGithub, faLinkedin, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { mapActions, mapState } from "pinia";
 import { useNutsStore } from "./stores/nuts";
 </script>
@@ -28,10 +30,15 @@ export default {
         <TitleView />
 
         <nav>
-          <a @click="toggle_nuts">banane</a>
-          <!-- <RouterLink to="/">Main</RouterLink>
-        <RouterLink to="/home">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink> -->
+          <a href="https://github.com/sirno">
+            <FontAwesomeIcon :icon="faGithub" size="2xl" />
+          </a>
+          <a href="https://x.com/nosirnoo">
+            <FontAwesomeIcon :icon="faSquareXTwitter" size="2xl" />
+          </a>
+          <a href="https://www.linkedin.com/in/ochsner-nicolas/">
+            <FontAwesomeIcon :icon="faLinkedin" size="2xl" />
+          </a>
         </nav>
       </div>
     </header>
@@ -84,7 +91,7 @@ a,
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(345, 100%, 71%, 0.2);
+    background-color: hsla(345, 100%, 71%, 0.08);
   }
 
   a:active {
@@ -112,7 +119,7 @@ nav a.router-link-exact-active:hover {
 a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  border-left: 2px solid var(--color-border);
 }
 
 a:first-of-type {
