@@ -56,12 +56,22 @@ export default {
 </script>
 
 <template>
-  <FloatingListItem v-for="item in content" :key="item.id">
-    <template #upper> {{ item.cloud }} </template>
-    <template #title>
-      <a target="_blank" :href="item.href">{{ item.title }}</a>
+  <FloatingListItem
+    v-for="item in content"
+    :key="item.id"
+  >
+    <template #upper>
+      {{ item.cloud }}
     </template>
-    <template #lower> {{ item.content }} </template>
+    <template #title>
+      <a
+        target="_blank"
+        :href="item.href"
+      >{{ item.title }}</a>
+    </template>
+    <template #lower>
+      {{ item.content }}
+    </template>
 
     {{ item.content }}
   </FloatingListItem>

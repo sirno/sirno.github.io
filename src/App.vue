@@ -1,8 +1,12 @@
 <script setup>
 import { RouterView } from "vue-router";
 import TitleView from "@/components/TitleView.vue";
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faGithub, faLinkedin, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faSquareXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { mapActions, mapState } from "pinia";
 import { useNutsStore } from "./stores/nuts";
 </script>
@@ -12,35 +16,32 @@ export default {
   computed: {
     style() {
       return {
-        scrollSnapType: this.walnuts ? "y mandatory" : "none",
+        scrollSnapType: this.$route.path === "/" ? "y mandatory" : "none",
       };
     },
     ...mapState(useNutsStore, ["coconuts", "walnuts"]),
   },
-  methods: {
-    ...mapActions(useNutsStore, ["toggle_nuts"]),
-  },
+  methods: { ...mapActions(useNutsStore, ["toggle_nuts"]) },
 };
 </script>
 
 <template>
   <div id="app-container" :style="style">
-    <header>
-      <div class="wrapper">
-        <TitleView />
-
-        <nav>
-          <a href="https://github.com/sirno">
-            <FontAwesomeIcon :icon="faGithub" size="2xl" />
-          </a>
-          <a href="https://x.com/nosirnoo">
-            <FontAwesomeIcon :icon="faSquareXTwitter" size="2xl" />
-          </a>
-          <a href="https://www.linkedin.com/in/ochsner-nicolas/">
-            <FontAwesomeIcon :icon="faLinkedin" size="2xl" />
-          </a>
-        </nav>
-      </div>
+    <header className="flex items-center justify-center p-4 min-w-1/2">
+      <nav
+        className="z-2 px-4 py-6 backdrop-blur backdrop-opacity-80 backdrop-blur-xs"
+      >
+        <a href="https://github.com/sirno">
+          <FontAwesomeIcon :icon="faGithub" size="2xl" />
+        </a>
+        <a href="https://x.com/nosirnoo">
+          <FontAwesomeIcon :icon="faSquareXTwitter" size="2xl" />
+        </a>
+        <a href="https://www.linkedin.com/in/ochsner-nicolas/">
+          <FontAwesomeIcon :icon="faLinkedin" size="2xl" />
+        </a>
+      </nav>
+      <TitleView />
     </header>
 
     <RouterView />
@@ -77,11 +78,6 @@ header {
   scroll-snap-align: start;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 a,
 .colored {
   text-decoration: none;
@@ -101,8 +97,8 @@ a,
 
 nav {
   position: fixed;
-  left: 10px;
-  bottom: 20px;
+  left: 0;
+  bottom: 0;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
@@ -132,13 +128,8 @@ a:first-of-type {
     place-items: center;
   }
 
-  .wrapper {
-    margin-left: 50px;
-  }
-
   #app-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     padding: 0 2rem;
   }
 
@@ -146,16 +137,6 @@ a:first-of-type {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
   }
 }
 </style>

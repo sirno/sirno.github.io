@@ -1,12 +1,12 @@
 <script>
 export default {
+  props: {
+    offset: Number,
+  },
   data() {
     return {
       velocity: [2 * Math.random() - 1, 2 * Math.random() - 1],
     };
-  },
-  props: {
-    offset: Number,
   },
   computed: {
     opacity() {
@@ -33,7 +33,7 @@ export default {
         'translate(' + offsetWidth + 'px,' + offsetHeight + 'px)',
     }"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

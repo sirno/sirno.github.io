@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-pattern .gitignore",
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
@@ -15,9 +15,12 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
-    "pinia": "^2.3.0",
+    "@tailwindcss/vite": "^4.1.4",
+    "fonts": "google/fonts",
+    "pinia": "^3.0.2",
+    "tailwindcss": "^4.1.4",
     "vue": "^3.5.13",
-    "vue-gtag": "^2.0.1",
+    "vue-gtag": "^3.3.0",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
@@ -25,13 +28,14 @@
     "@rushstack/eslint-patch": "^1.10.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
-    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
     "eslint": "^9.18.0",
-    "eslint-plugin-vue": "^9.32.0",
+    "eslint-plugin-vue": "^10.0.0",
     "jsdom": "^26.0.0",
     "prettier": "^3.4.2",
+    "typescript": "^5.8.3",
     "vite": "^6.0.7",
-    "vitest": "^2.1.8"
+    "vitest": "^3.1.1"
   }
 }

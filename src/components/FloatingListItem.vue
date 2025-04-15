@@ -15,17 +15,6 @@ export default {
   computed: {
     ...mapState(useNutsStore, ["peanuts"]),
   },
-  methods: {
-    computeOffset() {
-      let rect = this.$refs.title.getBoundingClientRect();
-      let position = (rect.top + rect.bottom) / 2;
-      let height = this.$refs.top.clientHeight;
-      return height * (position / height - 0.5);
-    },
-    handleScroll() {
-      this.offset = this.computeOffset();
-    },
-  },
   mounted() {
     this.handleScroll();
   },
@@ -45,22 +34,42 @@ export default {
       .getElementById("app-container")
       .removeEventListener("resize", this.handleScroll);
   },
+  methods: {
+    computeOffset() {
+      let rect = this.$refs.title.getBoundingClientRect();
+      let position = (rect.top + rect.bottom) / 2;
+      let height = this.$refs.top.clientHeight;
+      return height * (position / height - 0.5);
+    },
+    handleScroll() {
+      this.offset = this.computeOffset();
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="item" ref="top">
+  <div
+    ref="top"
+    class="item"
+  >
     <FloatingElement :offset="offset">
-      <slot name="upper"></slot>
+      <slot name="upper" />
     </FloatingElement>
     <div ref="title">
-      <slot name="title"></slot>
+      <slot name="title" />
     </div>
-    <FloatingSplit :offset="offset" v-if="peanuts">
-      <slot name="lower"></slot>
+    <FloatingSplit
+      v-if="peanuts"
+      :offset="offset"
+    >
+      <slot name="lower" />
     </FloatingSplit>
-    <FloatingElement :offset="offset" v-if="!peanuts">
-      <slot name="lower"></slot>
+    <FloatingElement
+      v-if="!peanuts"
+      :offset="offset"
+    >
+      <slot name="lower" />
     </FloatingElement>
   </div>
 </template>

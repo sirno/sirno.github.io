@@ -16,6 +16,18 @@ export default {
       default: "abcdefghijklmnopqrstuvwxyz@[]%&/ ",
     },
   },
+  data: function () {
+    let text = this.$slots.default()[0].children;
+    return {
+      text: text,
+      msg: text,
+      length: text.length,
+      rateData: this.rate,
+    };
+  },
+  mounted: function () {
+    DisturbedStringProvider.register(this);
+  },
   methods: {
     reset: function () {
       this.msg = this.text;
@@ -46,18 +58,6 @@ export default {
       }
       return perm.slice(0, n);
     },
-  },
-  data: function () {
-    let text = this.$slots.default()[0].children;
-    return {
-      text: text,
-      msg: text,
-      length: text.length,
-      rateData: this.rate,
-    };
-  },
-  mounted: function () {
-    DisturbedStringProvider.register(this);
   },
 };
 </script>
