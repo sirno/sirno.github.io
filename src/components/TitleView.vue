@@ -1,12 +1,6 @@
 <script setup>
-import { mapState } from "pinia";
 import DisturbedString from "./DisturbedString.vue";
-import { useNutsStore } from "../stores/nuts";
 import { RouterLink } from "vue-router";
-</script>
-
-<script>
-export default { computed: { ...mapState(useNutsStore, ["coconuts"]) } };
 </script>
 
 <template>
@@ -23,16 +17,17 @@ export default { computed: { ...mapState(useNutsStore, ["coconuts"]) } };
       <div class="title">
         <h1 class="colored text-4xl font-bold">collection</h1>
         <h3 className="text-xl">
-          of <DisturbedString v-if="coconuts"> things </DisturbedString
-          ><span v-if="!coconuts">things</span>
+          <DisturbedString>of things</DisturbedString>
         </h3>
       </div>
     </div>
-    <RouterLink to="/about" v-if="this.$route.path === '/'">
+    <RouterLink v-if="$route.path === '/'" to="/about">
       <a>Find out more...</a>
     </RouterLink>
-    <RouterLink to="/" v-if="this.$route.path === '/about'">
+    <RouterLink v-if="$route.path === '/about'" to="/">
       <a>Get back home...</a>
     </RouterLink>
   </div>
 </template>
+
+<style></style>

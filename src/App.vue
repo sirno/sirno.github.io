@@ -27,20 +27,21 @@ export default {
 
 <template>
   <div id="app-container" :style="style">
+    <nav
+      className="z-2 px-4 py-6 backdrop-blur backdrop-opacity-80 backdrop-blur-xs"
+    >
+      <a href="https://github.com/sirno">
+        <FontAwesomeIcon :icon="faGithub" size="2xl" />
+      </a>
+      <a href="https://x.com/nosirnoo">
+        <FontAwesomeIcon :icon="faSquareXTwitter" size="2xl" />
+      </a>
+      <a href="https://www.linkedin.com/in/ochsner-nicolas/">
+        <FontAwesomeIcon :icon="faLinkedin" size="2xl" />
+      </a>
+    </nav>
+
     <header className="flex items-center justify-center p-4 min-w-1/2">
-      <nav
-        className="z-2 px-4 py-6 backdrop-blur backdrop-opacity-80 backdrop-blur-xs"
-      >
-        <a href="https://github.com/sirno">
-          <FontAwesomeIcon :icon="faGithub" size="2xl" />
-        </a>
-        <a href="https://x.com/nosirnoo">
-          <FontAwesomeIcon :icon="faSquareXTwitter" size="2xl" />
-        </a>
-        <a href="https://www.linkedin.com/in/ochsner-nicolas/">
-          <FontAwesomeIcon :icon="faLinkedin" size="2xl" />
-        </a>
-      </nav>
       <TitleView />
     </header>
 

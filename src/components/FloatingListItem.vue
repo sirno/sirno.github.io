@@ -49,26 +49,17 @@ export default {
 </script>
 
 <template>
-  <div
-    ref="top"
-    class="item"
-  >
+  <div ref="top" class="item">
     <FloatingElement :offset="offset">
       <slot name="upper" />
     </FloatingElement>
     <div ref="title">
       <slot name="title" />
     </div>
-    <FloatingSplit
-      v-if="peanuts"
-      :offset="offset"
-    >
+    <FloatingSplit v-if="peanuts" :offset="offset">
       <slot name="lower" />
     </FloatingSplit>
-    <FloatingElement
-      v-if="!peanuts"
-      :offset="offset"
-    >
+    <FloatingElement v-if="!peanuts" :offset="offset">
       <slot name="lower" />
     </FloatingElement>
   </div>

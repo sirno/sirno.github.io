@@ -7,7 +7,7 @@ set -e
 rm -rf dist
 
 # build
-npm run build
+bun run build
 
 # navigate into the build output directory
 cd dist

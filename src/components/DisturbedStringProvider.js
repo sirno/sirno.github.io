@@ -19,7 +19,7 @@ class DisturbedStringProvider {
     DisturbedStringProvider.defaultProvider.rate += element.rateData;
     DisturbedStringProvider.defaultProvider._compute_distribution();
     DisturbedStringProvider.defaultProvider.disturb.bind(
-      DisturbedStringProvider.defaultProvider
+      DisturbedStringProvider.defaultProvider,
     );
     DisturbedStringProvider.defaultProvider.disturb();
   }
@@ -36,7 +36,7 @@ class DisturbedStringProvider {
     let rng = Math.random();
     return this.cummulative_distribution.reduce(
       (ret, el, idx) => (rng > el ? ret : idx),
-      0
+      0,
     );
   }
   disturb() {
